@@ -8,25 +8,25 @@ namespace QA_Automation_Databases
         [Test]
         public void MinWorkingTimeTest()
         {
-            _query.MinWorkingTime(_conn);
+            _query.MinWorkingTime();
         }
 
         [Test]
         public void UniqueProjectTestsTest()
         {
-            _query.UniqueProjectTests(_conn);
-        }
+            _query.UniqueProjectTests();
+        }        
 
         [Test]
         public void QueryTestsAfter7NovemberTest()
         {
-            _query.QueryTestsAfter7November(_conn);
+            _query.TestsAfter7November();
         }
 
         [Test]
         public void NumberOfTestsForBrowserTest()
         {
-            _query.NumberOfTestsForBrowser(_conn);
+            _query.NumberOfTestsForBrowser();
         }
     }
 }
