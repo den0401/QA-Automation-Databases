@@ -5,7 +5,7 @@ namespace QA_Automation_Databases
 {
     public class Logger
     {
-        private readonly string _exePath = Path.GetDirectoryName(
+        private static readonly string _exePath = Path.GetDirectoryName(
             Assembly.GetExecutingAssembly().Location);
 
         private readonly string _fileName;
@@ -45,6 +45,15 @@ namespace QA_Automation_Databases
             {
                 throw e;
             }
+        }
+
+        public static bool IsLogFileEmptyOrNotExist(string fileName)
+        {
+            var fileToTest = new FileInfo($"{_exePath }\\log{fileName}.txt");
+            if (!fileToTest.Exists || fileToTest.Length == 0)
+                return true;
+            else
+                return false;
         }
     }
 }
